@@ -1,13 +1,15 @@
 <template>
-    <div class="heroSection">
-        <div class="headingContent">
+    <div class="titleScreen">
+        <div class="topCenter">
             <h1>SOUNDRENALINE</h1>
-            <p>A designer, new to coding, learns WebGL and Three.js.</p>
+            <p>Visual thinking, translated into code. Experiments in WebGL and Three.js.</p>
         </div>
-        <div class="buttonWrap">
-                    <button v-if="!playFlag" @click="onPlay()">Play</button>
-        <button v-else @click="onPause()">Pause</button>
+
+        <div class="btmLeft">
+             <p>Built with clarity and a hint of foolishness.</p>
         </div>
+        <button v-if="!playFlag" @click="onPlay()">Music On</button>
+        <button v-else @click="onPause()">Music Off</button>
     </div>
 </template>
 
@@ -39,47 +41,39 @@ export default {
 };
 </script>
 
-<!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped lang="stylus">
-
-.heroSection {
-    justify-content: center;
-    align-items: center;
-    display: flex;
-    width: 100vw;
-    height: 100vh;
-
-
-    .headingContent {
+.titleScreen {
+    .topCenter {
         position: absolute;
-        width: 100%;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        text-align: center;
-        Gap: 16px;
+        width: 100%
+        display: flex
+        flex-direction: column
+        justify-content: center
+        align-items: center
         top: 0;
         left: 0;
         color: white;
         padding: 32px;
     }
 
-    h1 {
-        font-size: 10rem;
-        Letter-spacing: -7%;
-        font-family: "Arial Black", Arial, Helvetica, sans-serif;
-        line-height: 90%;
-        mix-blend-mode: difference;
-
+    .btmLeft {
+        position: absolute;
+        bottom: 32px;
+        left: 50px;
+        color: white;
+        padding: 32px;
     }
 
-    .buttonWrap {
-        width:100%;
-        height: 100%
-        display: flex;
-        justify-content: center;
-        align-items: center;
+    h1 {
+        font-size: 12.5rem;
+        line-height: 90%;
+        letter-spacing: -7%;
+        mix-blend-mode: difference;
+    }
+
+    p {
+        opacity: 0.7;
+    }
 
     button {
         color: white;
@@ -89,20 +83,19 @@ export default {
         justify-content: center;
         align-items: center;
         padding: 20px;
-        width: 100px;
+        width: auto;
         height: 50px;
         position: absolute;
-        bottom: 100px;
+        bottom: 50px;
         right: 100px;
-        border: solid purple;
+        border: 0.5px solid white;
         transition: all 0.3s;
         cursor: pointer;
 
         &:hover {
-            background: purple;
+            background: gray;
+            ease:ease-in-out;
         }
     }
 }
-}
-
 </style>

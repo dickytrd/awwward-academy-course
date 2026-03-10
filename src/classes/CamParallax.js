@@ -30,7 +30,7 @@ class CamParallax {
         this.camera.position.x += (this.mousePos.x - this.camera.position.x) * this.params.ease
         this.camera.position.y += (this.mousePos.y - this.camera.position.y) * this.params.ease
         this.camera.position.z += (this.initZ - this.camera.position.z) * this.params.ease
-        this.camera.lookAt(0, 0, 0);
+        this.camera.lookAt(0, 1, 0);
     }
 
     bind() {

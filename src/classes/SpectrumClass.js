@@ -28,7 +28,7 @@ class Spectrum {
                 value: 0.3
             },
             uBorderColor: {
-                value: new THREE.Color("hsl(287, 80%, 80%)")
+                value: new THREE.Color("hsl(220, 100%, 50%)")
             },
             uTime: {
                 value: 0
