@@ -10,6 +10,7 @@ import Floor from './FloorClass'
 import SpherePillard from './SpherePillardClass'
 import Spectrum from './SpectrumClass'
 import Particle from './ParticleSystem'
+import CamParallax from './CamParallax'
 
 class MainThreeScene {
     constructor() {
@@ -32,16 +33,18 @@ class MainThreeScene {
 
         //CAMERA AND ORBIT CONTROLLER
         this.camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000)
-        this.camera.position.set(0, 0, 8)
+        this.camera.position.set(0, 0, 5)
         this.controls = new OrbitControls(this.camera, this.renderer.domElement)
-        this.controls.enabled = config.controls
+        this.controls.enabled = false
         this.controls.maxDistance = 1500
         this.controls.minDistance = 0
+        CamParallax.init(this.camera)  
 
         Floor.init(this.scene)
         SpherePillard.init(this.scene)
         Spectrum.init(this.scene)
         Particle.init(this.scene)
+ 
 
         MyGUI.hide()
         if (config.myGui)
@@ -57,6 +60,7 @@ class MainThreeScene {
         SpherePillard.update()
         Spectrum.update()
         Particle.update()
+        CamParallax.update()
 
     }
 

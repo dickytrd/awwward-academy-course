@@ -52,5 +52,5 @@ class SoundReactor {
 
 }
 
-const _instance = new SoundReactor("./assets/CHINA-Rap.mp3")
+const _instance = new SoundReactor("./assets/BADADAN.mp3")
 export default _instance;
