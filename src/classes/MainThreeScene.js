@@ -31,7 +31,7 @@ class MainThreeScene {
 
         //CAMERA AND ORBIT CONTROLLER
         this.camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000)
-        this.camera.position.set(0, 0, 10)
+        this.camera.position.set(0, 0, 8)
         this.controls = new OrbitControls(this.camera, this.renderer.domElement)
         this.controls.enabled = config.controls
         this.controls.maxDistance = 1500
