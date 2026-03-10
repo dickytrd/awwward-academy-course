@@ -8,6 +8,7 @@ import MyGUI from '../utils/MyGUI'
 
 import Floor from './FloorClass'
 import SpherePillard from './SpherePillardClass'
+import Spectrum from './SpectrumClass'
 
 class MainThreeScene {
     constructor() {
@@ -38,6 +39,7 @@ class MainThreeScene {
 
         Floor.init(this.scene)
         SpherePillard.init(this.scene)
+        Spectrum.init(this.scene)
 
         MyGUI.hide()
         if (config.myGui)

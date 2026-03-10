@@ -11,12 +11,12 @@ class Floor {
         this.scene = scene
         this.floor
 
-        this.modelLoader.load('./assets/models/floor.glb', (gltf) => {
-            gltf.scene.traverse((child) => {
+        this.modelLoader.load('./assets/models/floor.glb', (glb) => {
+            glb.scene.traverse((child) => {
                 if (child instanceof THREE.Mesh) 
                 this.floor = child
             })
-            this.floor.translateY(-2.5)
+            this.floor.translateY(-3)
             this.scene.add(this.floor)
         })
 

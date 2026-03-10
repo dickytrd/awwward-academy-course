@@ -98,7 +98,7 @@ class  SpherePillard {
     update() {
         let i = 0
         while (i < this.pillards.children.length) {
-            this.pillards.children[i].children[0].position.y = (Math.sin(Date.now() * 0.01 + this.pillards.children[i].position.x) + 1) * 1.4
+            this.pillards.children[i].children[0].position.y = (Math.sin(Date.now() * 0.01 + this.pillards.children[i].position.x) + 1) * 1.1
             i++
         }
 
