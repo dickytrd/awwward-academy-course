@@ -6,8 +6,8 @@ import RAF from '../utils/RAF'
 import config from '../utils/config'
 import MyGUI from '../utils/MyGUI'
 
-import simpleFrag from '../shaders/simple.frag'
-import simpleVert from '../shaders/simple.vert'
+import Floor from './FloorClass'
+import SpherePillard from './SpherePillardClass'
 
 class MainThreeScene {
     constructor() {
@@ -30,19 +30,14 @@ class MainThreeScene {
 
         //CAMERA AND ORBIT CONTROLLER
         this.camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000)
-        this.camera.position.set(0, 0, 5)
+        this.camera.position.set(0, 0, 10)
         this.controls = new OrbitControls(this.camera, this.renderer.domElement)
         this.controls.enabled = config.controls
         this.controls.maxDistance = 1500
         this.controls.minDistance = 0
 
-        //DUMMY CUBE + SIMPLE GLSL SHADER LINKAGE
-        const shaderMat = new THREE.ShaderMaterial({
-            vertexShader: simpleVert,
-            fragmentShader: simpleFrag,
-        })
-        const cube = new THREE.Mesh(new THREE.BoxGeometry(), shaderMat)
-        this.scene.add(cube)
+        Floor.init(this.scene)
+        SpherePillard.init(this.scene)
 
         MyGUI.hide()
         if (config.myGui)
@@ -55,6 +50,8 @@ class MainThreeScene {
 
     update() {
         this.renderer.render(this.scene, this.camera);
+        SpherePillard.update()
+
     }
 
     resizeCanvas() {
